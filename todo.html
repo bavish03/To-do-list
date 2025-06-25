@@ -1,0 +1,78 @@
+<input id="input">
+<button onClick="add()">Add</button>
+<ul id="list-container">
+    <li>Hello
+        <button onclick="deleteitem(event)">Delete</button>
+    </li>
+</ul>
+
+<script>
+    var u1=document.getElementById("list-container")
+    var input = document.getElementById("input")
+    function add()
+    {
+        var listitem = document.createElement("li")
+        listitem.innerHTML = input.value + "<button onClick='deleteitem(event)'>Delete</button>"
+        u1.append(listitem)
+    }
+    function deleteitem(event)
+    {
+        event.target.parentElement.remove()
+    }
+</script>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background: #121212;
+    color: #e0e0e0;
+    padding: 20px;
+  }
+
+  #input {
+    padding: 10px;
+    width: 200px;
+    background-color: #1e1e1e;
+    border: 1px solid #444;
+    border-radius: 4px;
+    color: #fff;
+  }
+
+  button {
+    padding: 10px 15px;
+    margin-left: 5px;
+    background-color: #3a86ff;
+    border: none;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  button:hover {
+    background-color: #265fcc;
+  }
+
+  #list-container {
+    margin-top: 20px;
+    list-style-type: none;
+    padding: 0;
+  }
+
+  #list-container li {
+    background: #1f1f1f;
+    padding: 10px;
+    margin-bottom: 8px;
+    border-radius: 4px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid #333;
+  }
+
+  #list-container li button {
+    background-color: #e63946;
+  }
+
+  #list-container li button:hover {
+    background-color: #ba1c2f;
+  }
+</style>
